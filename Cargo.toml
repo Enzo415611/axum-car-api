@@ -1,0 +1,12 @@
+[package]
+name = "axum-car-api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+axum = { version = "0.8.9", features = ["json"] }
+chrono = "0.4.45"
+serde = { version = "1.0.229", features = ["serde_derive"] }
+toasty = { version = "0.11.0", features = ["turso"] }
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros"] }
