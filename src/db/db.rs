@@ -6,7 +6,9 @@ pub async fn init_db() -> anyhow::Result<toasty::Db> {
         .connect("turso:./app.db")
         .await?;
 
-    db.push_schema().await?;
+    if db.schema().db.tables.is_empty() {
+        db.push_schema().await?;
+    }
 
     Ok(db)
 }
